@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot</title>
+    <link rel="stylesheet" href="/static/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-------- CHAT BAR BLOCK -->   
+    <div class="chatbarReduc"> <div class="flex" id="botMessage"><button class="mini-iconbot" id="mini-iconbot"></button><div class="bubble-container" id="bubbleContent">
+        <div class="bubble">
+          <p>Besoin d'aide? 🤖</p>
+        </div>
+      </div></div><br>
+        <div id="chat-button" class="menubar"><div class="flex"><div><div class="iconbot"></div><div class="online"></div></div><div class="titlebot">&nbsp; SkapGPT<br>
+            <span style="color: #ffffff; font-weight: lighter;">&nbsp; en ligne</span></div><button class="close" onclick="closeBot()">─</button></div></div>
+
+        <div class="content" id="content">
+            <div class="fullchat">
+                <!-------- Message Container -->
+
+                <div class="textContainer" id="blockbox">
+                    <div class="chat-container">
+                        
+                        <!--------- Messages -->
+                    
+                        <div id="chatbox">
+                            
+                           
+                            <p id="botStarterMessage" class="botText"></p>
+                            <span id="chat-timestamp"></span>
+                            
+                        </div>
+                        <div id="uploadbox"> <i id="chat-icon" style="color: #fff; cursor: pointer; justify-content: right;" class="fa fa-fw fa-close"
+                            onclick="closeInput2()"></i>   <br> 
+                            <h5>Téléchargez vos fichiers</h5>
+                            <br>
+                            <div class="flex"><input class="form-control" onchange="verifFiles()" type="file" multiple><button type="button" class="btn btn-info" id="sendbutton" onclick='closeInput()' disabled><i id="chat-icon" style="color: rgba(255, 255, 255, 0.867);" class="fa fa-solid fa-arrow-up"></i></button></div> </div>
+
+                        <!--------- User input box -->
+
+                        <div id="chatbarbottom">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatinputblock" id="inputchatuser">           
+                    <div id="userInput">
+                        <input id="textInput" class="inputBox" type="text" name="msg"
+                            placeholder="Saisissez votre message ici ...">
+                        <p></p>
+                    </div>
+
+                    <div class="chatbarIcon">
+                        <i id="chat-icon" style="color: #2d0d35;cursor: pointer;" class="fa fa-solid fa-upload"
+                            onclick="uploadButton();"></i>                        
+                        <i id="chat-icon" style="color: #43dbff; cursor: pointer" class="fa fa-fw fa-send"
+                            onclick="sendButton()"></i>                      
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/static/chat.js"></script>
+
+</html>
